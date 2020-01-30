@@ -1,4 +1,4 @@
-# JavaScript 3
+l# JavaScript 3
 *Work through the `student.js` file only.*
 
 In this project we will be building a super hero card creator based off of the data and functions you create.

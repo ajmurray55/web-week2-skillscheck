@@ -4,7 +4,7 @@
 //////////////////STEP 1////////////////////
 //Create a variable called 'lovesCode' and assign it a value of true or false (as a boolean) depending on if you love code or not. (It's okay if you don't yet
 
-var lovesCode = true;
+var lovesCode = false;
 
 // Code Here
 

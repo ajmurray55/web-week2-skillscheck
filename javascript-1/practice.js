@@ -50,14 +50,12 @@ function lovesCodeChecker(x) {
 
 //Code here
 
-var even = [2, 4, 6, 8];
-var odd = [1, 3, 5, 7, 9];
-
 function oddChecker(num) {
-  if (num === odd) {
+  if (num % 2 === 0) {
+    return "the number is even";
+  } else {
     return "the number is odd";
-  } else num !== odd;
-  return "the number is even";
+  }
 }
 
 //////////////////PROBLEM 7////////////////////
@@ -111,26 +109,30 @@ let me = {
   firstName: "Ammon",
   state: "Arizona",
   age: 24,
-  greeter: ""
+  greeter: () => {
+    "Hello! my name is " + me.firstName + " and I live in " + me.state;
+  }
 };
+
+// console.log(me.greeter)
 //////////////////PROBLEM 12////////////////////
 
 // Create a function called 'bigOrSmall' that takes in one parameter, 'arr', which will be an array of numbers. Inside of the bigOrSmall function, create a new array called 'answers'. Then, loop over the passed in arr parameter, and check to see if the number in the array is GREATER than 100. If it is, push 'big' as a string to the answers array. If the number is LESS than or EQUAL to 100, push 'small' as a string to the answers array. Return the answers array inside of the function.
 
 // Code here
 
-// function bigOrSmall(arr){
+function bigOrSmall(arr) {
+  let answers = [];
 
-// let arr = answers [];
-
-// for (i = 0; arr.length > 100; i++) {
-// 	return answers.push('big');
-// } if else( i = 0; i <= 100; i++ ) {
-// 	return answers.push('small');
-// }
-
-// }
-// return bigOrSmall
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > 100) {
+      answers.push("big");
+    } else {
+      answers.push("small");
+    }
+  }
+  return answers;
+}
 
 //////////////////PROBLEM 13////////////////////
 
@@ -138,11 +140,18 @@ let me = {
 
 //Code Here
 
-function arrayReverser(arr) {
-  reversed = [];
+let arr1 = [0,1,2,3]
 
-  for (let reversed = 0; reverse.reversed; reversed++) return reversed;
+function arrayReverser(arr) {
+  let reversed = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i])
+  }
+return reversed
+
 }
+// console.log(arrayReverser(arr1))
 
 //////////////////PROBLEM 14 - 18 Setup////////////////////
 
@@ -164,8 +173,11 @@ console.log(doubled);
 
 // Code Here
 
-const filtered = myNumbers.filter(value => value.legnth > 100);
-console.log(filtered);
+const filtered = myNumbers.filter(value => value > 100);
+
+console.log(filtered)
+
+
 
 //////////////////PROBLEM 16////////////////////
 
@@ -173,9 +185,7 @@ console.log(filtered);
 
 // Code Here
 
-let total = (acc, currVal) => acc + currVal;
-
-console.log(myNumbers.reduce(total));
+let total = myNumbers.reduce((acc, currVal) => acc + currVal)
 
 //////////////////PROBLEM 17////////////////////
 
@@ -183,15 +193,9 @@ console.log(myNumbers.reduce(total));
 
 // Code Here
 
-myNumbersIndex = [];
+let myNumbersIndex = [];
 
-for (let i = 0; i < myNumbers.length; i++) {
-  myNumbersIndex.push(myNumbers[i]);
-}
-
-myNumbers.forEach(function(num) {
-  myNumbersIndex.push(num);
-});
+myNumbers.forEach((item, i) => myNumbersIndex.push(i))
 
 //////////////////PROBLEM 18////////////////////
 
@@ -200,8 +204,7 @@ const notGeorge = ["Louis", "Ted", "Bill", "Sharon", "Mark", "Angela"];
 
 // Code Here
 
-forTheLoveOfGeorge = notGeorge.map(x => 'George')
-
+forTheLoveOfGeorge = notGeorge.map(x => "George");
 
 //////////////////PROBLEM 19////////////////////
 
@@ -217,8 +220,15 @@ const people = [
 
 // Code Here
 
+let enemies = people.filter( person => person.friend === false)
+
+console.log(enemies)
+
 //////////////////PROBLEM 20////////////////////
 
 // Using the people array above, get a total of the awesomeLevel from all the people, and store that value in a variable named 'totallyAwesome'. Use .reduce().
 
 // Code Here
+
+
+let totallyAwesome = people.reduce((acc, currVal) => acc + currVal.awesomeLevel, 0)
